@@ -1,8 +1,8 @@
 {
-  "title": "EnigmaAddBlocker",
-  "name": "enigmaaddblocker",
+  "title": "Enigmabox Addon",
+  "name": "enigmaboxaddon",
   "version": "0.0.3",
-  "description": "Activates the AddBlocker of your EnigmaBox on your Device.",
+  "description": "Activate web filtering with a single click.",
   "main": "index.js",
   "author": "Armin Schmidt",
   "engines": {
