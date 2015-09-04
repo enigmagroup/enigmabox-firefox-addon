@@ -1,2 +1,3 @@
-#EnigmaAddBlocker
-Activates the AddBlocker of your EnigmaBox on your Device.
+# Enigmabox ad blocker Firefox addon
+
+Activate web filtering with a single click.
