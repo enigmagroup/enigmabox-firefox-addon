@@ -240,7 +240,6 @@ function handleClick(btn)	//state
 
 function doesConnectionExist(address) {
 	var xhr = new xhrObject.XMLHttpRequest();
-    var file = "http://www.yoursite.com/somefile.png";
     var randomNum = Math.round(Math.random() * 10000);
     var timeout = 5000; 
 	 
