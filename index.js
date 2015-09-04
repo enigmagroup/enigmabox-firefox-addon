@@ -60,9 +60,10 @@ onTrack: function(window) {
     var menuitem1 = document.createElement('menuitem');
     menuitem1.setAttribute('id', 'menuitem1');
     menuitem1.setAttribute('label', _("admin-interface"));
+	menuitem1.setAttribute('image', self.data.url("./settings.png"));
     menuitem1.setAttribute('class', 'menuitem-iconic');
 	menuitem1.setAttribute('validate', 'always');
-	menuitem1.dir = "reverse";
+	//menuitem1.dir = "reverse";
     menuitem1.addEventListener('command', function(event) {
             tabs.open("http://box", "tab");
         }
@@ -71,9 +72,10 @@ onTrack: function(window) {
 	var menuitem10 = document.createElement('menuitem');
     menuitem10.setAttribute('id', 'menuitem10');
     menuitem10.setAttribute('label', _("enigmaMail"));
+	menuitem10.setAttribute('image', self.data.url("./webmail.png"));
     menuitem10.setAttribute('class', 'menuitem-iconic');
 	menuitem10.setAttribute('validate', 'always');
-	menuitem10.dir = "reverse";
+	//menuitem10.dir = "reverse";
     menuitem10.addEventListener('command', function(event) {
             tabs.open("http://mail.box", "tab");
         }
