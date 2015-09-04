@@ -33,7 +33,7 @@ onTrack: function(window) {
     var navBar = document.getElementById('addon-bar');
 
     btn = document.createElement('toolbarbutton');
-    btn.setAttribute('id', 'EnigmaAddBlockerControl');
+    btn.setAttribute('id', 'WebfilterControl');
 	btn.setAttribute("tooltiptext", _("activated"));
     btn.setAttribute('type', 'menu-button');
     btn.setAttribute('class', 'toolbarbutton-1');
@@ -42,7 +42,7 @@ onTrack: function(window) {
     btn.addEventListener('command', function(event) {
             console.log("this=" + this.id);
 			console.log(event.target.id);
-			if(event.target.id == 'EnigmaAddBlockerControl')
+			if(event.target.id == 'WebfilterControl')
 			{
             	handleClick(btn);
 			}
