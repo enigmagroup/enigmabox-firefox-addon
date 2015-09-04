@@ -1,0 +1,13 @@
+{
+  "title": "EnigmaAddBlocker",
+  "name": "enigmaaddblocker",
+  "version": "0.0.3",
+  "description": "Activates the AddBlocker of your EnigmaBox on your Device.",
+  "main": "index.js",
+  "author": "Armin Schmidt",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT"
+}
