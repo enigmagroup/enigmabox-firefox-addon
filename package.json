@@ -1,6 +1,6 @@
 {
   "title": "Enigmabox Addon",
-  "name": "enigmaboxaddon",
+  "name": "enigmabox-addon",
   "version": "0.0.4",
   "description": "Activate web filtering with a single click.",
   "main": "index.js",
