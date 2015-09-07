@@ -80,6 +80,18 @@ onTrack: function(window) {
             tabs.open("http://mail.box", "tab");
         }
         , false);
+		
+	var menuitem11 = document.createElement('menuitem');
+    menuitem11.setAttribute('id', 'menuitem11');
+    menuitem11.setAttribute('label', _("help"));
+	menuitem11.setAttribute('image', self.data.url("./question.png"));
+    menuitem11.setAttribute('class', 'menuitem-iconic');
+	menuitem11.setAttribute('validate', 'always');
+	//menuitem10.dir = "reverse";
+    menuitem11.addEventListener('command', function(event) {
+            tabs.open("https://wiki.enigmabox.net/howto/adblocker", "tab");
+        }
+        , false);
 	
 	var menuseparator1 = document.createElement('menuseparator');
 	menuseparator1.setAttribute('id', 'menuseparator1');
@@ -166,6 +178,7 @@ onTrack: function(window) {
 
     menupopup.appendChild(menuitem1);
 	menupopup.appendChild(menuitem10);
+	menupopup.appendChild(menuitem11);
 	menupopup.appendChild(menuseparator1);
 	menupopup.appendChild(menuitem8);
 	menupopup.appendChild(menuseparator4);
@@ -292,11 +305,11 @@ function checkConnection(btn, menupopup)
 	
 	if(doesConnectionExist(adress))
 	{
-		children[6].setAttribute('image', self.data.url("./ok-icon.png"));
+		children[7].setAttribute('image', self.data.url("./ok-icon.png"));
 	}
 	
 	else
 	{
-		children[6].setAttribute('image', self.data.url("./error-icon.png"));
+		children[7].setAttribute('image', self.data.url("./error-icon.png"));
 	}
 }
