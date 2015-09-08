@@ -37,7 +37,7 @@ onTrack: function(window) {
 	btn.setAttribute("tooltiptext", _("activated"));
     btn.setAttribute('type', 'menu-button');
     btn.setAttribute('class', 'toolbarbutton-1');
-    btn.setAttribute('image', self.data.url("./icon_activated-16.png"));	//http://www.facebook.com/favicon.ico
+    btn.setAttribute('image', self.data.url("./icon_activated.ico"));	//http://www.facebook.com/favicon.ico
 
     btn.addEventListener('command', function(event) {
             console.log("this=" + this.id);
@@ -71,7 +71,7 @@ onTrack: function(window) {
 	
 	var menuitem10 = document.createElement('menuitem');
     menuitem10.setAttribute('id', 'menuitem10');
-    menuitem10.setAttribute('label', _("enigmaMail"));
+    menuitem10.setAttribute('label', _("enigmaMail") + "  " + checkMail());
 	menuitem10.setAttribute('image', self.data.url("./webmail.png"));
     menuitem10.setAttribute('class', 'menuitem-iconic');
 	menuitem10.setAttribute('validate', 'always');
@@ -195,7 +195,7 @@ onTrack: function(window) {
     navBar.appendChild(btn);
 
     console.log("window tracked");
-	intervalID = tmr.setInterval(function() {checkConnection(btn, menupopup);}, 5000);
+	intervalID = tmr.setInterval(function() {checkConnection(btn, menupopup);}, 10000);
 
 	checkConnection(btn, menupopup);	//Erste Ausführung beim Start von Firefox
     }
@@ -214,7 +214,7 @@ function deactivation(btn)
 {
 	//button.state(button, deactivatedState);
 	btn.setAttribute("tooltiptext", _("deactivated"));
-    btn.setAttribute('image', self.data.url("./icon_deactivated-16.png"));
+    btn.setAttribute('image', self.data.url("./icon_deactivated.ico"));
 	ss.storage.activation = false;
 	prefsvc.set("network.proxy.type", 5);	//Proxy des Systems verwenden
 }
@@ -223,7 +223,7 @@ function activation(btn)
 {
 	//button.state(button, activatedState);
 	btn.setAttribute("tooltiptext", _("activated"));
-    btn.setAttribute('image', self.data.url("./icon_activated-16.png"));
+    btn.setAttribute('image', self.data.url("./icon_activated.ico"));
 	ss.storage.activation = true;
 	prefsvc.set("network.proxy.http", "box");
 	prefsvc.set("network.proxy.http_port", 8888);
@@ -244,7 +244,7 @@ function handleClick(btn)	//state
   	else
   	{
 	  	btn.setAttribute("tooltiptext", _("activated"));
- 		btn.setAttribute('image', self.data.url("./icon_problem-16.png"));
+ 		btn.setAttribute('image', self.data.url("./icon_problem.ico"));
 	  
 	  	if(doesConnectionExist(adress))
 	  	{
@@ -256,11 +256,11 @@ function handleClick(btn)	//state
 function doesConnectionExist(address) {
 	var xhr = new xhrObject.XMLHttpRequest();
     var randomNum = Math.round(Math.random() * 10000);
-    var timeout = 5000; 
+    var timeout = 10000; 
 	 
     xhr.open('HEAD', address + "?rand=" + randomNum, false);
 	
-	tmr.setTimeout(function () {xhr.abort()}, 5000);
+	tmr.setTimeout(function () {xhr.abort()}, timeout);
      
     try {
         xhr.send(null);
@@ -283,7 +283,7 @@ function checkConnection(btn, menupopup)
 		{
 			//button.state(button, activatedState);
 			btn.setAttribute("tooltiptext", _("activated"));
-    		btn.setAttribute('image', self.data.url("./icon_activated-16.png"));
+    		btn.setAttribute('image', self.data.url("./icon_activated.ico"));
 			activation(btn);
 		}
 		
@@ -291,7 +291,7 @@ function checkConnection(btn, menupopup)
 		{
 			//button.state(button, problemState);
 			btn.setAttribute("tooltiptext", _("activated"));
-    		btn.setAttribute('image', self.data.url("./icon_problem-16.png"));
+    		btn.setAttribute('image', self.data.url("./icon_problem.ico"));
 			deactivation(btn);
 		}
 	}
@@ -311,5 +311,20 @@ function checkConnection(btn, menupopup)
 	else
 	{
 		children[7].setAttribute('image', self.data.url("./error-icon.png"));
+	}
+}
+
+function checkMail()
+{
+	var count = 0;
+	
+	if(count != 0)
+	{
+		return "  (" + count + " " + _("unread") + ")";
+	}
+	
+	else
+	{
+		return "";
 	}
 }
